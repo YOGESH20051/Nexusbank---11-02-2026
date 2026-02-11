@@ -1,0 +1,157 @@
+/* ===============================
+   GLOBAL CONTAINER
+================================*/
+body {
+    background: radial-gradient(circle at top, #0a1324 0%, #040814 60%);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    color: #e5f6ff;
+}
+
+.container {
+    padding: 40px 60px;
+}
+
+/* ===============================
+   BACK BUTTON
+================================*/
+.back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 20px;
+    color:#00f7ff;
+    background:rgba(0,255,255,0.08);
+    border:1px solid rgba(0,255,255,0.4);
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+    backdrop-filter: blur(6px);
+    box-shadow:0 0 15px rgba(0,255,255,.4);
+    transition:.3s;
+}
+
+.back-link:hover{
+    background:rgba(0,255,255,0.18);
+    box-shadow:0 0 25px rgba(0,255,255,.7);
+    transform:translateY(-2px);
+}
+/* ===============================
+   CONTENT CARD
+================================*/
+.content {
+    background: linear-gradient(145deg, rgba(18,30,58,.95), rgba(6,10,24,.95));
+    border-radius: 22px;
+    padding: 35px;
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.6),
+        inset 0 0 0 1px rgba(255,255,255,.04);
+}
+
+h1 {
+    font-size: 28px;
+    color: #8fe7ff;
+    margin-bottom: 25px;
+}
+
+/* ===============================
+   TABLE
+================================*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+thead {
+    background: linear-gradient(90deg, rgba(20,40,70,.9), rgba(10,20,45,.9));
+}
+
+th {
+    text-align: left;
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #7fdfff;
+    letter-spacing: .5px;
+}
+
+tbody tr {
+    border-bottom: 1px solid rgba(255,255,255,.05);
+    transition: .25s;
+}
+
+tbody tr:hover {
+    background: rgba(61,231,255,.05);
+}
+
+td {
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #d7efff;
+}
+
+/* ===============================
+   STATUS BADGES
+================================*/
+.status-badge {
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .4px;
+    display: inline-block;
+}
+
+/* Approved */
+.status-approved {
+    color: #16ff8a;
+    background: rgba(22,255,138,.12);
+    box-shadow: 0 0 12px rgba(22,255,138,.4);
+}
+
+/* Pending */
+.status-pending {
+    color: #ffd000;
+    background: rgba(255,208,0,.12);
+    box-shadow: 0 0 12px rgba(255,208,0,.4);
+}
+
+/* Rejected */
+.status-rejected {
+    color: #ff4b4b;
+    background: rgba(255,75,75,.12);
+    box-shadow: 0 0 12px rgba(255,75,75,.4);
+}
+
+/* ===============================
+   PAGINATION
+================================*/
+.pagination {
+    margin-top: 28px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pagination a {
+    min-width: 38px;
+    padding: 8px 14px;
+    text-align: center;
+    border-radius: 10px;
+    color: #7fdfff;
+    text-decoration: none;
+    border: 1px solid rgba(127,223,255,.25);
+    transition: .25s;
+}
+
+.pagination a:hover {
+    background: rgba(127,223,255,.12);
+}
+
+.pagination a.active {
+    background: linear-gradient(145deg, #2fd8ff, #1aa3ff);
+    color: #001522;
+    box-shadow: 0 0 15px rgba(47,216,255,.6);
+    border: none;
+}

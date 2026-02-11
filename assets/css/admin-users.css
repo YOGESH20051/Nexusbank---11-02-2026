@@ -1,0 +1,220 @@
+:root {
+    --main-color: #FFFFFF;
+    --bg-color: #F5F7FA;
+    --bg-sidecolor-2: #6359e9;
+    --font-color: #343C6A;
+    --thin-font-color: #718EBF;
+    --inactive-font-color: #B1B1B1;
+}
+
+h2 {
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* 🔧 MAIN TABLE FIX */
+.users-table {
+    width: 100%;
+    min-width: 1100px;    
+    border-bottom: 1px solid #e0e0e0;             /* allows table to grow */
+    border-collapse: collapse;
+    table-layout: auto !important;     /* very important */
+    background-color: var(--main-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* Header */
+.users-table thead th {
+    background-color: var(--bg-sidecolor-2);
+    color: var(--main-color);
+    text-align: left;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Body rows */
+.users-table tbody tr:nth-child(even) {
+    background-color: #f9fbfd;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.users-table tbody tr:hover {
+    background-color: rgba(99,89,233,0.05);
+}
+
+.users-table td {
+    padding: 12px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid #e0e0e0;
+    white-space: nowrap;               /* prevents ugly squeeze */
+}
+
+/* Allow email to wrap if needed */
+.users-table td:nth-child(2) {
+    white-space: normal;
+}
+
+/* Status colors */
+.users-table td.status {
+    font-weight: 500;
+}
+
+.users-table td.status span.pending {
+    color: var(--thin-font-color);
+}
+
+.users-table td.status span.approved {
+    color: var(--bg-sidecolor-2);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    font-size: 13px;
+    padding: 6px 10px;
+    margin-right: 4px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-sm {
+    font-size: 12px;
+    padding: 4px 8px;
+}
+
+.btn-success { background: #28a745; color: #fff; }
+.btn-success:hover { background: #218838; }
+
+.btn-danger { background: #dc3545; color: #fff; }
+.btn-danger:hover { background: #c82333; }
+
+.btn-warning { background: #ffc107; color: #212529; }
+.btn-warning:hover { background: #e0a800; }
+
+/* 🟢 ACTIVE STATUS DOT */
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+/* Blink animation */
+@keyframes blink {
+    0%   { transform: scale(1);   opacity: 1; }
+    50%  { transform: scale(1.6); opacity: 0.4; }
+    100% { transform: scale(1);   opacity: 1; }
+}
+
+.active-dot {
+    background: #28c76f;
+    animation: blink 1.2s infinite;
+    box-shadow: 0 0 8px rgba(40,199,111,.8);
+}
+
+.inactive-dot {
+    background: #ff3b3b;
+}
+
+.active-text {
+    color: #28c76f;
+    font-weight: 600;
+}
+
+.inactive-text {
+    color: #ff3b3b;
+    font-weight: 600;
+}
+
+
+/* Prevent whole page horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Keep admin content inside viewport */
+.main-content,
+.page-content,
+.content,
+.container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Table must respect parent width */
+.users-table {
+    width: 100%;
+    table-layout: auto;
+}
+
+/* Allow cells to shrink properly */
+.users-table th,
+.users-table td {
+    white-space: normal;
+    word-break: break-word;
+}
+
+
+/* Remove any layout restrictions */
+.users-table {
+    min-width: 1200px !important;
+    width: max-content;      /* 🔥 this is the real fix */
+    table-layout: auto !important;
+}
+
+/* Let columns expand */
+.users-table th,
+.users-table td {
+    white-space: nowrap;
+}
+
+/* Allow email column to wrap */
+.users-table td:nth-child(2) {
+    white-space: normal;
+}
+.container,
+.content,
+.main-content {
+    max-width: none !important;
+    width: 100% !important;
+}
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+.users-table {
+    width: max-content !important;
+    min-width: 1200px !important;
+    table-layout: auto !important;
+}
+
+/* 🔥 Break the layout width lock */
+body * {
+    max-width: none !important;
+}
+/* Allow the main content area to expand */
+.main-content,
+.container,
+.content,
+.wrapper,
+.page-content {
+    width: 100% !important;
+    max-width: none !important;
+}
+/* Let table grow with content */
+.users-table {
+    width: max-content !important;
+    min-width: 1200px !important;
+    table-layout: auto !important;
+}

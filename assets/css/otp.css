@@ -1,0 +1,164 @@
+/* ============ GLOBAL ============ */
+body {
+    background: radial-gradient(circle at top, #0f172a, #020617);  
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: #e5e7eb;
+  
+}
+
+/* ============ PAGE LAYOUT ============ */
+.otp-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.otp-logo {
+    width: 140px;
+    margin-bottom: 24px;
+    filter: drop-shadow(0 0 12px rgba(56,189,248,.4));
+}
+
+/* ============ CARD ============ */
+.otp-card {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 32px 28px;
+    box-shadow: 
+        0 0 30px rgba(56,189,248,.12),
+        0 0 60px rgba(14,165,233,.05);
+    border: 1px solid rgba(56,189,248,.15);
+}
+
+.otp-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px rgba(56,189,248,.25);
+    pointer-events: none;
+}
+
+
+/* ============ TITLES ============ */
+.otp-title {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.otp-desc {
+    text-align: center;
+    font-size: .95rem;
+    color: #cbd5f5;
+    margin-bottom: 26px;
+    line-height: 1.5;
+}
+
+/* ============ OTP INPUTS ============ */
+.otp-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.otp-input {
+    width: 52px;
+    height: 60px;
+    border-radius: 12px;
+    background: rgba(2, 6, 23, 0.9);
+    border: 1px solid rgba(56,189,248,.35);
+    text-align: center;
+    font-size: 1.6rem;
+    color: #38bdf8;
+    outline: none;
+    box-shadow: 0 0 12px rgba(56,189,248,.12);
+    transition: .2s;
+}
+
+.otp-input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 16px rgba(56,189,248,.6);
+    transform: translateY(-1px);
+}
+
+/* ============ TIMER + RESEND ============ */
+.timer-resend {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .85rem;
+    margin-bottom: 26px;
+    color: #c7d2fe;
+}
+
+#countdown {
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+#resend-link {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#resend-link.disabled {
+    opacity: .4;
+    pointer-events: none;
+}
+
+/* ============ BUTTONS ============ */
+.btn-verify {
+    width: 100%;
+    padding: 13px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: #020617;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 18px rgba(56,189,248,.5);
+    transition: .25s;
+}
+
+.btn-verify:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 26px rgba(56,189,248,.8);
+}
+
+/* ============ CANCEL LINK ============ */
+.btn-cancel {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: .9rem;
+}
+
+.btn-cancel:hover {
+    color: #e5e7eb;
+}
+
+/* ============ ALERT ============ */
+.alert {
+    background: rgba(220,38,38,.15);
+    border: 1px solid rgba(220,38,38,.4);
+    color: #fecaca;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: .85rem;
+    margin-bottom: 18px;
+    text-align: center;
+}
